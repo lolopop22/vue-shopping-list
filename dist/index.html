@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Shopping list with Vuejs</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <h2>{{firstMessage}}</h2>
+
+            <h2>{{secondMessage}}</h2>
+            
+            <div>
+                <input ref="input_item" v-model="itemToAdd" placeholder="Enter a new item:">
+                <span>
+                    <button v-on:click="addItem">Add item</button>
+                </span>
+            </div>
+
+            <ul id="ulElement">
+                <li v-for="item in items">
+                    {{ item.label }}
+                    <button v-on:click="deleteItem(item['id'])">Delete item</buton>
+                </li>
+            </ul>
+        </div>
+
+        <script src="bundle.js"></script>
+    </body>
+
+
+</html>
